@@ -1,0 +1,20 @@
+<body>
+    <div class="container form-container mt-5">
+        <form novalidate class="row g-3 needs-validation" method="POST" action="/listings/<%=requestedListing._id%>/review" >
+
+            <label for="customRange1" class="form-label">Rating</label>
+            <input type="range" class="form-range" id="customRange1" min="1" max="5" name="review[rating]">
+
+            <div class="col-12">
+                <label for="inputDescription" class="form-label">Describe Your Experience with the stay</label>
+                <textarea required class="form-control" id="inputDescription" name="review[comment]" placeholder="maximum 150 words" rows="5" cols="10"></textarea>
+                <div class="invalid-feedback">
+                    A valid Description is required!
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+    </form>
+</body>
