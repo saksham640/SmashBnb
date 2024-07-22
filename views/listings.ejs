@@ -1,0 +1,42 @@
+<% layout("layouts/boilerplate") -%>
+<style>
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    margin: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .form-container {
+      max-width: 85%;
+    }
+  }
+</style>
+
+<body>
+  <br>
+  <h3> Listings will be displayed here! </h3>
+  <br>
+  <form action="/addListing">
+    <button class="btn btn-primary" id="addListing">Add your Listing!</button>
+  </form>
+  <br>
+  <div class="row card-container">
+    <% for(let i = allListings.length-1; i >= 0; i--){ %>
+      <div class="card" style="width: 25.4rem;">
+        <a class="customcard" href="/listings/<%=allListings[i]._id%>">
+          <img src="<%=allListings[i].image.url%>" class="card-img-top" alt="...">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title"><%=allListings[i].title%></h5>
+          <p class="card-text"><%=allListings[i].description%></p>
+          <a href="/listings/<%=allListings[i]._id%>" class="btn btn-primary">View more!</a>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</body>

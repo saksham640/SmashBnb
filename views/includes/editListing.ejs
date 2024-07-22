@@ -1,0 +1,97 @@
+<head>
+    <style>
+        .form-container {
+    max-width: 60%;
+    margin: auto;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        max-width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <br>
+    <p class="h2">Edit your Listing!</p>
+    <p class="h5">original values are already</p>
+    <div class="container form-container mt-5">
+        <form novalidate class="row g-3 needs-validation" method="POST" action="/listings/<%=requestedListing._id%>/update" >
+            <div class="col-md-6">
+                <label for="inputTitle" class="form-label">Title</label>
+                <input type="text" required class="form-control" name="title" value="<%= requestedListing.title %>" placeholder="Name of your Listing" >
+                <div class="invalid-feedback">
+                    A valid Title is required!
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="inputImage" class="form-label">Image</label>
+                <input type="text" class="form-control" id="inputImage" name="image" value="<%= requestedListing.image.url %>" placeholder="URL Link of your image">
+                <div class="valid-feedback">
+                    Default image will be applied in case of no input
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="inputDescription" class="form-label">Description</label>
+                <textarea required class="form-control" id="inputDescription" name="description" placeholder="Describe your Place" rows="5" cols="10"><%= requestedListing.description %></textarea>
+                <div class="invalid-feedback">
+                    A valid Description is required!
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="inputLocation" class="form-label">Location</label>
+                <input type="text" required class="form-control" id="inputLocation" name="location" value="<%= requestedListing.location %>" placeholder="Address">
+                <div class="invalid-feedback">
+                    A valid Address is required
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="inputCountry" class="form-label">Country</label>
+                <select id="inputCountry" required class="form-select dropend" name="country" value="<%= requestedListing.country %>">
+                    <option selected><%= requestedListing.country %></option>
+                    <%-include("../includes/allCountriesList.ejs")%>
+                </select>
+                <div class="invalid-feedback">
+                    A valid country is required
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label for="inputPrice" class="form-label">Price</label>
+                <input type="number"required class="form-control" id="inputPrice" name="price" value="<%= requestedListing.price %>" placeholder="in rupees">
+                <div class="invalid-feedback">
+                    A valid amount is required
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" required type="checkbox" id="gridCheck" name="gridCheck" <%= requestedListing.gridCheck ? 'checked' : '' %>>
+                    <label class="form-check-label" for="gridCheck">
+                        I agrreeeeeee to i dont fucking know what it's not like you read the terms and conditions anyways.
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit!</button>
+            </div>
+        </form>
+    </div>
+    <form method="GET" action="/listings/<%= requestedListing._id %>">
+        <button class="btn btn-primary">Go Back</button>
+    </form>
+</body>

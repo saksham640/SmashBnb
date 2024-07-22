@@ -1,0 +1,67 @@
+.container {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.listing-image {
+    width: 60%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.info {
+    margin-bottom: 20px;
+}
+
+.info h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.info h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.info h3 span {
+    font-weight: normal;
+}
+
+.buttons form {
+    display: inline-block;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff3030;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fd4e4e;
+}
+
+@media (max-width: 600px) {
+        .container{
+            width: 98%;
+        }
+
+    }.listing-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-primary{
+    font-size: 120%;
+}

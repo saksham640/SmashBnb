@@ -1,0 +1,97 @@
+<head>
+    <style>
+        .container {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.listing-image {
+    width: 60%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.info {
+    margin-bottom: 20px;
+}
+
+.info h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.info h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.info h3 span {
+    font-weight: normal;
+}
+
+.buttons form {
+    display: inline-block;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff3030;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fd4e4e;
+}
+
+@media (max-width: 600px) {
+        .container{
+            width: 98%;
+        }
+
+    }.listing-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-primary{
+    font-size: 120%;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="listing-image" src="<%=requestedListing.image.url%>" alt="Listing Image">
+        <div class="info">
+            <p><b><i><%=requestedListing.description%></i></b></p>
+            <h2>Listing Details:</h2>
+            <h3>Place Name: <span><%= requestedListing.title %></span></h3>
+            <h3>Price: <span><%= requestedListing.price %></span></h3>
+            <h3>Location: <span><%= requestedListing.location %></span></h3>
+            <h3>Country: <span><%= requestedListing.country %></span></h3>
+        </div>
+        <div class="buttons">
+            <form method="GET" action="/listings/<%= requestedListing._id %>/edit">
+                <button class="btn btn-primary">Edit This Listing</button>
+            </form>
+            <form method="GET" action="/listings">
+                <button class="btn btn-primary">View All Listings</button>
+            </form>
+            <form method="GET" action="/listings/<%= requestedListing._id %>/delete">
+                <button class="btn btn-primary">Delete This Listing</button>
+            </form> 
+        </div>
+    </div>
+</body>
+
+

@@ -1,0 +1,56 @@
+<head>
+  <style>
+    .custom-container {
+      width: 160%;
+      max-width: 1500px; /* Adjust this value as needed */
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: -30%;
+      margin-right: auto;
+    }
+    .custom-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .custom-col {
+      flex: 0 0 33.3333%;
+      max-width: 33.3333%;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 768px) {
+      .custom-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    .custom-card {
+      width: 100%;
+    }
+    .checked{
+      color: gold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="custom-container">
+    <div class="custom-row">
+      <% for(let i = requestedListing.reviews.length - 1; i >= 0; i--) { %>
+        <div class="custom-col">
+          <div class="card custom-card">
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <h6><%= requestedListing.reviews[i].rating %> Stars </h6>
+              <% for(let j = 0; j < requestedListing.reviews[i].rating; j++) { %>
+                <span class="fa fa-star checked"></span>
+              <% } %>
+              <p class="card-text"><%= requestedListing.reviews[i].comment %></p>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</body>
