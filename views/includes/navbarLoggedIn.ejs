@@ -1,0 +1,55 @@
+<style>
+    #signUp{
+      background-color: red;
+      color: white;
+    }
+   #login{
+    color: red;
+    font-weight: 600;
+    font-size: 120%;
+   }
+   #welcome{
+    border: 0px, solid, white;
+    background-color: rgb(201, 201, 201);
+    border-radius: 1rem;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+   }
+   #logout{
+    background-color: red;
+    color: white;
+  }
+  </style>
+  <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><i class="fa-solid fa-plane-departure"></i></a>
+      <a class="navbar-brand" id="navlogo" href="/">SmashBnb</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/listings">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Near Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/addlisting">Add Your Listing!</a>
+          </li>
+          <li class="nav-link">
+            <a href="/logout"><button class="btn" id="logout">LOGOUT</button></a>
+          </li>
+        </ul>
+        <span id = "welcome"><a class="navbar-brand" id="navlogo" href="/">Welcome <%= loggedIn.username %></a></span>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success search-btn" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  

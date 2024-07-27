@@ -1,10 +1,14 @@
-<%layout("/layouts/boilerplate")-%>
+<%if(loggedIn.status == 1){ %>
+    <% layout("layouts/boilerplateLoggedIn.ejs") -%>
+  <% } else { %>
+  <% layout("layouts/boilerplate") -%>
+  <% } %>
 <br>
 <%-include("./includes/singleListing.ejs")%>
 <br>
 <h2>Leave A Review!</h2>
-<br>
 <%-include("./includes/createReviewForm.ejs")%>
+<br>
 Latest Reviews:
 <%-include("./includes/Reviews.ejs")%>
 

@@ -1,0 +1,67 @@
+<%if(loggedIn.status == 1){ %>
+    <% layout("layouts/boilerplateLoggedIn.ejs") -%>
+  <% } else { %>
+  <% layout("layouts/boilerplate") -%>
+  <% } %>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+
+    #yoo {
+        color: white;
+    }
+
+    #btn {
+        margin: 1rem;
+        margin-top: 1.4rem;
+        margin-left: -0.09rem;
+    }
+
+    .heading {
+        background-color: rgba(160, 214, 255, 0.482);
+        text-align: center;
+        padding: 0.7rem;
+        border-radius: 1rem;
+    }
+
+    .form-container {
+        max-width: 100%; /* Ensure it doesn't exceed viewport width */
+    }
+</style>
+
+<h1 class="heading">
+    Sign up and Start Smashing!
+</h1>
+
+<form novalidate class="row g-3 needs-validation" method="POST" action="/signUp">
+    <div class="container form-container mt-5 offset-md-3 offset-sm-1">
+        <div class="col-md-6">
+            <label for="Username" class="form-label">Username:</label>
+            <input type="text" required class="form-control" id="inputUsername" name="username" placeholder="will be shown to others">
+            <div class="valid-feedback">That will work!</div>
+            <div class="invalid-feedback">bruh it's required</div>
+        </div>
+
+        <div class="col-md-6">
+            <label for="Email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="will be used for verification" required>
+            <div class="valid-feedback">That will work!</div>
+            <div class="invalid-feedback">bruh it's required</div>
+        </div>
+        
+        <div class="col-md-6">
+            <label for="Password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="inputPassword" name="password" placeholder="must be strong" required>
+            <div class="valid-feedback">strong enough</div>
+            <div class="invalid-feedback">needs some edging</div>
+        </div>
+
+        <button class="btn btn-primary" id="btn">Register!</button>
+    </div>
+</form>
+

@@ -39,7 +39,7 @@
     <div class="custom-row">
       <% for(let i = requestedListing.reviews.length - 1; i >= 0; i--) { %>
         <div class="custom-col">
-          <div class="card custom-card">
+          <div class="card custom-card pb-3">
             <div class="card-body">
               <h5 class="card-title">Name</h5>
               <h6><%= requestedListing.reviews[i].rating %> Stars </h6>
@@ -48,6 +48,9 @@
               <% } %>
               <p class="card-text"><%= requestedListing.reviews[i].comment %></p>
             </div>
+            <form method="GET" action="/listings/<%=requestedListing._id%>/reviews/<%=requestedListing.reviews[i]._id%>/delete">
+              <button class="btn btn-sm btn-dark">Delete</button>
+            </form>
           </div>
         </div>
       <% } %>

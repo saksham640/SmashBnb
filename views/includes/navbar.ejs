@@ -1,3 +1,14 @@
+<style>
+  #signUp{
+    background-color: red;
+    color: white;
+  }
+ #login{
+  color: red;
+  font-weight: 600;
+  font-size: 120%;
+ }
+</style>
 <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><i class="fa-solid fa-plane-departure"></i></a>
@@ -11,7 +22,7 @@
           <a class="nav-link" aria-current="page" href="/listings">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Near me</a>
+          <a class="nav-link" href="#">Near Me</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/addlisting">Add Your Listing!</a>
@@ -28,6 +39,8 @@
           </ul>
         </li>
       </ul>
+      <a href="/signUp"><button class="btn" id="signUp">SIGNUP!</button></a>
+      <a href="/login"><button class="btn" id="login">LOGIN</button></a>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success search-btn" type="submit">Search</button>

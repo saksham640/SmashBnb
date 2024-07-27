@@ -1,0 +1,61 @@
+<%if(loggedIn.status == 1){ %>
+    <% layout("layouts/boilerplateLoggedIn.ejs") -%>
+  <% } else { %>
+  <% layout("layouts/boilerplate") -%>
+  <% } %>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+
+    #yoo {
+        color: white;
+    }
+
+    #btn {
+        margin: 1rem;
+        margin-top: 1.4rem;
+        margin-left: -0.09rem;
+    }
+
+    .heading {
+        background-color: rgba(160, 214, 255, 0.482);
+        text-align: center;
+        padding: 0.7rem;
+        border-radius: 1rem;
+    }
+
+    .form-container {
+        max-width: 100%; /* Ensure it doesn't exceed viewport width */
+    }
+    #yada{
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+</style>
+
+<h1 class="heading">
+    Login and Start Smashing!
+</h1>
+<h5 id="yada"> Listings can only be added by logged In Users</h5>
+
+<form novalidate class="row g-3 needs-validation" method="POST" action="/login">
+    <div class="container form-container mt-5 offset-md-3 offset-sm-1">
+        <div class="col-md-6">
+            <label for="Username" class="form-label">Username:</label>
+            <input type="text" required class="form-control" id="inputTitle" name="username">
+            <div class="invalid-feedback">bruh it's required</div>
+        </div>
+        <br>
+        <div class="col-md-6">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control"  name="password" required>
+        </div>
+
+        <button class="btn btn-primary" id="btn">Login!</button>
+    </div>
+</form>

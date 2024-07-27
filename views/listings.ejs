@@ -1,4 +1,9 @@
+<%if(loggedIn.status == 1){ %>
+  <% layout("layouts/boilerplateLoggedIn.ejs") -%>
+<% } else { %>
 <% layout("layouts/boilerplate") -%>
+<% } %>
+
 <style>
   .card-container {
     display: flex;
@@ -10,6 +15,12 @@
     margin: 10px;
   }
 
+  #user{
+    color: red;
+    font-weight: 700;
+  }
+  
+
   @media (max-width: 600px) {
     .form-container {
       max-width: 85%;
@@ -19,7 +30,11 @@
 
 <body>
   <br>
-  <h3> Listings will be displayed here! </h3>
+  <%if(loggedIn.username == ""){ %>
+    <h3> Listings are displayed here! </h3>
+ <% } else { %>
+  <h3> reccommended Listings for <a class="navbar-brand" id="user" href="/"><%= loggedIn.username %></a> </h3>
+  <% } %>
   <br>
   <form action="/addListing">
     <button class="btn btn-primary" id="addListing">Add your Listing!</button>

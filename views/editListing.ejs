@@ -1,4 +1,8 @@
-<% layout("/layouts/boilerplate") -%>
+<%if(loggedIn.status == 1){ %>
+    <% layout("layouts/boilerplateLoggedIn.ejs") -%>
+  <% } else { %>
+  <% layout("layouts/boilerplate") -%>
+  <% } %>
 <br>
 <%-include("./includes/singleListing.ejs")%>
 <br>
