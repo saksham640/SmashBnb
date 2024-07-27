@@ -28,13 +28,6 @@
                     Looks good!
                 </div>
             </div>
-            <div class="col-md-6">
-                <label for="inputImage" class="form-label">Image</label>
-                <input type="text" class="form-control" id="inputImage" name="image" value="<%= requestedListing.image.url %>" placeholder="URL Link of your image">
-                <div class="valid-feedback">
-                    Default image will be applied in case of no input
-                </div>
-            </div>
             <div class="col-12">
                 <label for="inputDescription" class="form-label">Description</label>
                 <textarea required class="form-control" id="inputDescription" name="description" placeholder="Describe your Place" rows="5" cols="10"><%= requestedListing.description %></textarea>
