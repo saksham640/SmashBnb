@@ -37,10 +37,15 @@
         margin-top: 1.5rem;
     }
     #signup{
-        text-align: center;
-        align-items: center;
-        align-self: center;
-        align-content: center;
+        font-weight: 500;
+        font-size: 1.4rem;
+
+    }
+    #button{
+        
+        display: flex;
+        justify-content: center; /* Center horizontally */
+
     }
 </style>
 
@@ -69,5 +74,5 @@
 <br>
 <h3 id = "yada"> Don't have a SmashBnb Account yet? </h3>
 <form action = "/signUp" method = "GET">
-<button class = "btn btn-primary" id="signup">SIGN UP NOW!</button>
+<span id = "button"><button class = "btn btn-primary" id="signup">SIGN UP NOW!</button></span>
 </form>
